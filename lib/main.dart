@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_sample/src/provider/bottom_navigation_provider.dart';
 import 'package:flutter_provider_sample/src/provider/counter_provider.dart';
+import 'package:flutter_provider_sample/src/provider/movie_provider.dart';
 import 'package:flutter_provider_sample/src/ui/home.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +21,11 @@ class MyApp extends StatelessWidget {
       home: MultiProvider(
         providers: [
           ChangeNotifierProvider(
-              create: (BuildContext context) => CounterProvider())
+              create: (BuildContext context) => CounterProvider()),
+          ChangeNotifierProvider(
+              create: (BuildContext context) => MovieProvider()),
+          ChangeNotifierProvider(
+              create: (BuildContext context) => ButtomNavigationProvider()),
         ],
         child: Home(),
       ),
